@@ -13,13 +13,16 @@ body {
   .app {
     @apply min-h-screen px-10 md:px-40;
   }
+  .app.dark {
+    @apply text-gray-50 bg-slate-800;
+  }
 
   .app-section {
     @apply container mx-auto;
   }
 
   .app-header {
-    @apply py-5 flex justify-between content-center;
+    @apply py-5 flex justify-between content-center sticky top-0 z-10 backdrop-blur-md bg-white/30 dark:bg-slate-800/30;
   }
   .app-header__name {
     @apply text-xl font-black;
@@ -34,11 +37,18 @@ body {
     @apply px-4 py-2 rounded-sm bg-gradient-to-r from-cyan-500 to-teal-500 text-white;
   }
 
+  .app-portfolio,
+  .app-services,
+  .app-main {
+    @apply py-10;
+  }
+
   .app-portfolio__content,
   .app-services__content,
   .app-main__content {
     @apply text-center;
   }
+
   .app-main__title {
     @apply my-2 text-2xl font-black text-teal-600 md:text-4xl;
   }
@@ -51,7 +61,7 @@ body {
     @apply max-w-xl my-2 mx-auto font-light md:text-xl;
   }
   .app-main__socials {
-    @apply flex justify-center gap-8 pt-6 text-3xl cursor-pointer text-gray-700;
+    @apply flex justify-center gap-8 my-14 text-3xl cursor-pointer text-gray-700 dark:text-gray-100;
   }
   .app-main__image {
     @apply relative my-10 mx-auto rounded-full w-60 h-60 overflow-hidden;
@@ -62,12 +72,17 @@ body {
     @apply mb-4 text-xl font-black md:text-3xl;
   }
 
+  .app-portfolio__list,
   .app-services__list {
-    @apply py-2;
+    @apply my-4 flex gap-10 flex-wrap justify-center;
   }
+
+  .app-portfolio__item,
   .app-services__item {
-    @apply my-8 p-8 rounded-xl text-center shadow-lg;
+    @apply p-8 rounded-xl text-center shadow-lg max-w-xs md:flex-1 md:basis-1/2 dark:bg-gray-700;
   }
+
+  .app-portfolio__item-image,
   .app-services__item-image {
     @apply mx-auto;
   }

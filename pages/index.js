@@ -17,6 +17,7 @@ const PORTFOLIO_IMG_URLS=[portfolio1, portfolio2, portfolio3]
 
 export default function Home() {
   const [data, setData] = useState({})
+  const [darkMode, setDarkMode] = useState(false)
 
   useEffect(
     () => {
@@ -26,6 +27,8 @@ export default function Home() {
     }, []
   )
 
+  const handleDarkMode = () => setDarkMode(!darkMode)
+
   return (
     <div>
       <Head>
@@ -34,27 +37,25 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className='app'>
+      <main className={darkMode ? 'dark app' : 'app'}>
         {isObjEmpty(data) && (
           <section className='app-section'>
-            <p className='text-lg font-black'>No profile data</p>
+            <p className='text-lg font-black dark:text-white'>No profile data</p>
           </section>
         )}
         {!isObjEmpty(data) && (
           <>
-            <section className='app-section'>
-              <nav className='app-header'>
-                <h1 className='app-header__name'>{data.navigation.brandName}</h1>
-                <ul className='app-header__nav'>
-                  <li className='app-header__nav-item'>
-                    <FaMoon className='app-header__nav-icon' />
-                  </li>
-                  <li className='app-header__nav-item'>
-                    <a href='#' className='app-header__nav-link'>{data.navigation.linkName}</a>
-                  </li>
-                </ul>
-              </nav>
-            </section>
+            <nav className='app-header'>
+              <h1 className='app-header__name'>{data.navigation.brandName}</h1>
+              <ul className='app-header__nav'>
+                <li className='app-header__nav-item' onClick={handleDarkMode}>
+                  {!darkMode ? <FaMoon className='app-header__nav-icon' /> : <FaSun className='app-header__nav-icon' />}
+                </li>
+                <li className='app-header__nav-item'>
+                  <a href='#' className='app-header__nav-link'>{data.navigation.linkName}</a>
+                </li>
+              </ul>
+            </nav>
             <section className='app-section'>
               <div className='app-main'>
                 <div className='app-main__content'>
@@ -101,8 +102,8 @@ export default function Home() {
                 </div>
                 <div className='app-portfolio__list'>
                 {PORTFOLIO_IMG_URLS.map((item, idx) => (
-                  <div className='app-services__item' key={idx}>
-                    <Image className='app-services__item-image' src={item} alt='portfolio' width='200' height='200' />
+                  <div className='app-portfolio__item' key={idx}>
+                    <Image className='app-portfolio__item-image' src={item} alt='portfolio' width='200' height='200' />
                   </div>
                   ))}
                 </div>
