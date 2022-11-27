@@ -1,0 +1,41 @@
+{
+  "siteName": "Portfolio sample with Next.js and TailwindCSS",
+  "navigation": {
+    "brandName": "Brand Name",
+    "linkName": "My Resume"
+  },
+  "main": {
+    "title": "Developers Full Name",
+    "subtitle": "JavaScript Engineer, UI Developer",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, itaque deserunt quos suscipit, minus provident fugiat nulla consequatur at, minima ex. Alias vero voluptatem repellat harum quos qui necessitatibus molestias."
+  },
+  "services": {
+    "title": "Services I offer",
+    "description": "Maiores qui exercitationem odio ratione doloribus laboriosam tenetur, porro provident distinctio cupiditate laudantium reiciendis alias vero debitis veritatis modi, perferendis, maxime earum.",
+    "description2": "Excepturi impedit exercitationem quam blanditiis provident esse aperiam, placeat doloribus alias quos ut perspiciatis velit voluptatum qui natus et consequatur? Dolore, ducimus!",
+    "items": [
+      {
+        "title": "Beautifull designs",
+        "description": "Maiores qui exercitationem odio ratione doloribus laboriosam tenetur, porro provident distinctio cupiditate laudantium reiciendis alias vero debitis veritatis modi, perferendis, maxime earum.",
+        "image": "/public/assets/design.jpg",
+        "tags": ["Figma", "Photoshop", "Adobe XD"]
+      },
+      {
+        "title": "Perfect coding",
+        "description": "Quis totam ipsam nesciunt molestiae. Recusandae dolor quam odio architecto iusto molestiae dolores velit distinctio sequi enim, ad vel minima quas voluptas.",
+        "image": "/public/assets/code.jpg",
+        "tags": ["VSCode", "GitHub", "React.js"]
+      },
+      {
+        "title": "Consulting",
+        "description": "Excepturi impedit exercitationem quam blanditiis provident esse aperiam, placeat doloribus alias quos ut perspiciatis velit voluptatum qui natus et consequatur? Dolore, ducimus!",
+        "image": "/public/assets/consulting.jpg",
+        "tags": ["Speed optimization", "Tech stack"]
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "The Portfolio",
+    "description": "Nihil recusandae qui labore dolorem quo! Maiores, temporibus esse dolorem possimus repellat quaerat ullam laboriosam ex, autem quo consectetur nemo odio at."
+  }
+}
